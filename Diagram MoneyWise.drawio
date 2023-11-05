@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2023-11-05T03:24:55.952Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.0.0 Safari/537.36" etag="cC2K4qCtTh-Sepx1-miQ" version="22.0.8" type="github" pages="2">
+<mxfile host="app.diagrams.net" modified="2023-11-05T03:25:19.670Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.0.0 Safari/537.36" etag="MkIIL0WZkkk9z6vn_6mK" version="22.0.8" type="github" pages="2">
   <diagram id="C5RBs43oDa-KdzZeNtuy" name="Page-1">
     <mxGraphModel dx="1050" dy="581" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
@@ -107,6 +107,9 @@
         <mxCell id="j364eVEHS8qyh7obZd3C-11" value="ID (Unique Identifier)&#xa;Associated User&#xa;Report Type&#xa; (Daily, Weekly, Monthly, &#xa;Annual, Historical, custom.)&#xa;" style="text;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rounded=0;shadow=0;html=0;" parent="j364eVEHS8qyh7obZd3C-9" vertex="1">
           <mxGeometry y="34" width="160" height="96" as="geometry" />
         </mxCell>
+        <mxCell id="btH2ON1mM5-c4O0OAg3T-8" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="j364eVEHS8qyh7obZd3C-13" target="j364eVEHS8qyh7obZd3C-23">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
         <mxCell id="j364eVEHS8qyh7obZd3C-13" value="Annual" style="swimlane;fontStyle=0;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeLast=0;collapsible=1;marginBottom=0;rounded=0;shadow=0;strokeWidth=1;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
           <mxGeometry x="150" y="780" width="160" height="138" as="geometry">
             <mxRectangle x="130" y="380" width="160" height="26" as="alternateBounds" />
@@ -118,6 +121,9 @@
         <mxCell id="fj89kiGaMiTq9kpiL4Rp-2" value="ID&#xa;Body&#xa;" style="text;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rounded=0;shadow=0;html=0;" parent="j364eVEHS8qyh7obZd3C-13" vertex="1">
           <mxGeometry y="34" width="160" height="96" as="geometry" />
         </mxCell>
+        <mxCell id="btH2ON1mM5-c4O0OAg3T-9" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="j364eVEHS8qyh7obZd3C-16" target="j364eVEHS8qyh7obZd3C-26">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
         <mxCell id="j364eVEHS8qyh7obZd3C-16" value="Monthly" style="swimlane;fontStyle=0;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeLast=0;collapsible=1;marginBottom=0;rounded=0;shadow=0;strokeWidth=1;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
           <mxGeometry x="370" y="780" width="160" height="138" as="geometry">
             <mxRectangle x="130" y="380" width="160" height="26" as="alternateBounds" />
@@ -128,6 +134,9 @@
         </mxCell>
         <mxCell id="fj89kiGaMiTq9kpiL4Rp-3" value="ID&#xa;Body&#xa;" style="text;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rounded=0;shadow=0;html=0;" parent="j364eVEHS8qyh7obZd3C-16" vertex="1">
           <mxGeometry y="34" width="160" height="96" as="geometry" />
+        </mxCell>
+        <mxCell id="btH2ON1mM5-c4O0OAg3T-10" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="j364eVEHS8qyh7obZd3C-20" target="j364eVEHS8qyh7obZd3C-29">
+          <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="j364eVEHS8qyh7obZd3C-20" value="Weekly" style="swimlane;fontStyle=0;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeLast=0;collapsible=1;marginBottom=0;rounded=0;shadow=0;strokeWidth=1;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
           <mxGeometry x="600" y="780" width="160" height="138" as="geometry">
