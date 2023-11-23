@@ -1,4 +1,4 @@
-package User;
+package Model;
 
 public class User {
     private String id;
@@ -23,7 +23,10 @@ public class User {
         this.email = email;
         this.password = password;
     }
-
+    public User(String name, String password) {
+        this.name = name;
+        this.password = password;
+    }
     public String getId() {
         return id;
     }
