@@ -1,5 +1,7 @@
 package presentation;
 
+import business.UserManager;
+
 import java.util.Scanner;
 
 public class MenuHandler {
@@ -12,7 +14,7 @@ public class MenuHandler {
     public void start() {
         System.out.println("Welcome to Personal Expense Management System MoneyWise");
         System.out.println("Press enter to start...");
-        scanner.nextLine(); // Wait for any key press
+        scanner.nextLine(); // Wait for enter key press.
 
         int choice;
         do {
@@ -25,7 +27,7 @@ public class MenuHandler {
 
             switch (choice) {
                 case 1:
-                    // Logic for creating a new user
+                  //  UserManager.createUser();
                     break;
                 case 2:
                     // Logic for logging in with an existing user
