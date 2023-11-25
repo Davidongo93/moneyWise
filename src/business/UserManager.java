@@ -36,7 +36,7 @@ public class UserManager {
 
         User user = userData.getUser(name,password);
 
-/        if (user != null) {
+        if (user != null) {
             // Logic for handling a successful login
             System.out.println("Login successful!");
             // You can add more functionality here, like displaying user's entries, etc.
