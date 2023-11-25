@@ -6,8 +6,11 @@ import java.util.Scanner;
 
 public class MenuHandler {
     private Scanner scanner;
+    private UserManager userManager;
 
-    public MenuHandler(Scanner scanner) {
+    public MenuHandler(Scanner scanner, UserManager userManager) {
+
+        this.userManager =  userManager;
         this.scanner = scanner;
     }
 
@@ -27,10 +30,10 @@ public class MenuHandler {
 
             switch (choice) {
                 case 1:
-                  //  UserManager.createUser();
+                    userManager.createUser();
                     break;
                 case 2:
-                    // Logic for logging in with an existing user
+                  userManager.loginUser();
                     break;
                 case 3:
                     System.out.println("Exiting...");

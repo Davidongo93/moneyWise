@@ -1,5 +1,6 @@
 package business;
 
+import Model.EntryType;
 import data.EntryData;
 import Model.Entry;
 
@@ -28,7 +29,7 @@ public class EntryManager {
         double amount = scanner.nextDouble();
         scanner.nextLine(); // Consume the newline character after the number
 
-        Entry newEntry = new Entry(date, description, amount);
+        Entry newEntry = new Entry(date, description, amount, EntryType.INCOME);
        // entryData.addEntry(newEntry);
 
         System.out.println("Entry added successfully!");
