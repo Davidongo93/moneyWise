@@ -1,11 +1,13 @@
 package Model;
-
+import java.util.ArrayList;
+import java.util.List;
 public class User {
     private String id;
 
     private String name;
     private String email;
     private String password;
+    private List<Entry> entries;
 
     public User() {
     }
@@ -57,5 +59,13 @@ public class User {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public List<Entry> getEntries() {
+        return entries;
+    }
+
+    public void setEntries(List<Entry> entries) {
+        this.entries = entries;
     }
 }

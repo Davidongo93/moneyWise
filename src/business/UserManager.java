@@ -8,10 +8,14 @@ import java.util.Scanner;
 public class UserManager {
     private UserData userData;
     private Scanner scanner;
+    private boolean userLoggedIn;
+    private User loggedInUser;  // Almacena al usuario actualmente logueado
 
     public UserManager(UserData userData, Scanner scanner) {
         this.userData = userData;
         this.scanner = scanner;
+        this.userLoggedIn = false;
+        this.loggedInUser = null;
     }
 
     public  void createUser() {
@@ -37,13 +41,25 @@ public class UserManager {
         User user = userData.getUser(name,password);
 
         if (user != null) {
-            // Logic for handling a successful login
+            userLoggedIn = true;  // Establece el estado como "logueado"
+            loggedInUser = user;  // Almacena al usuario logueado
             System.out.println("Login successful!");
+            System.out.println("welcome!"+ user);
             // You can add more functionality here, like displaying user's entries, etc.
         } else {
             System.out.println("Invalid username or password. Please try again.");
         }
     }
+    public void createEntry(EntryManager entryManager) {
+        entryManager.addEntry();
+    }
+    public boolean isUserLoggedIn() {
+        return userLoggedIn;
+    }
 
+    public void logoutUser() {
+        userLoggedIn = false;   // Cambia el estado a "no logueado"
+        loggedInUser = null;    // Limpia la información del usuario logueado
+    }
     // Add more methods for user-related logic as needed
 };

@@ -10,7 +10,25 @@ public class EntryData {
 
     public EntryData() {
         this.entries = new ArrayList<>();
-    }
+    };
 
-    // Métodos para almacenar y recuperar datos de entradas
+    public void addEntry(Entry entry) {
+        entries.add(entry);
+    };
+
+    public List<Entry> getEntries() {
+        return entries;
+    }
+public void showEntries(){
+        getEntries().stream().forEach(entry -> {
+            System.out.println(entry.getId());
+            System.out.println(entry.getAmount());
+            System.out.println(entry.getDate());
+            System.out.println(entry.getDescription());
+            System.out.println(entry.getType());
+        });
 }
+    public void setEntries(List<Entry> entries) {
+        this.entries = entries;
+    }
+};

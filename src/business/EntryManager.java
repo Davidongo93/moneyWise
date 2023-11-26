@@ -1,8 +1,8 @@
 package business;
 
-import Model.EntryType;
 import data.EntryData;
 import Model.Entry;
+import Model.EntryType;
 
 import java.util.Date;
 import java.util.Scanner;
@@ -30,11 +30,13 @@ public class EntryManager {
         scanner.nextLine(); // Consume the newline character after the number
 
         Entry newEntry = new Entry(date, description, amount, EntryType.INCOME);
-       // entryData.addEntry(newEntry);
+        entryData.addEntry(newEntry);
 
         System.out.println("Entry added successfully!");
     }
-
+    public void showEntries(){
+        entryData.showEntries();
+    };
     // Add more methods for entry-related logic as needed
 
     private Date parseDate(String dateString) {
