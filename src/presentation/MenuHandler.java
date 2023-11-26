@@ -34,16 +34,16 @@ public class MenuHandler {
                     System.out.println("3. Exit");
                     System.out.print("Select an option: ");
                     choice = scanner.nextInt();
-                    scanner.nextLine(); // Consume el carácter de nueva línea después del número
+                    scanner.nextLine();
 
-                    validInput = true;  // Si no hay excepción, la entrada es válida
+                    validInput = true;
+
                 } catch (InputMismatchException exception) {
                     System.out.println("Invalid input. Please enter a valid integer.");
-                    scanner.nextLine();  // Consume la entrada incorrecta para evitar un bucle infinito
+                    scanner.nextLine();
                 } finally {
-                    // Este bloque se ejecuta siempre, independientemente de si se lanzó una excepción o no
-                    // Puedes poner aquí cualquier código que necesites ejecutar después del bloque try-catch
-                }
+
+                };
             } while (!validInput);  // Repetir hasta que la entrada sea válida
 
             switch (choice) {
@@ -79,7 +79,7 @@ public class MenuHandler {
 
             switch (choice) {
                 case 1:
-                    //NIY userManager.showUserEntries();
+                    entryData
                     break;
                 case 2:
                     userManager.createEntry(entryManager);

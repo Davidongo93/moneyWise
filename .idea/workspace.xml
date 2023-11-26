@@ -6,9 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="e7df0a30-838f-4f2e-93b1-025e5c8ca2d1" name="Changes" comment="mi primer try catch java">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/business/EntryManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/business/EntryManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/business/UserManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/business/UserManager.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/data/EntryData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/EntryData.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/presentation/MenuHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/presentation/MenuHandler.java" afterDir="false" />
     </list>
@@ -201,7 +199,15 @@
       <option name="project" value="LOCAL" />
       <updated>1700962141573</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="mi primer try catch java">
+      <option name="closed" value="true" />
+      <created>1700971102450</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1700971102450</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">

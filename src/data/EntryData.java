@@ -10,10 +10,15 @@ public class EntryData {
 
     public EntryData() {
         this.entries = new ArrayList<>();
-    }
+    };
 
-    public void addEntry(Entry entry){
+    public void addEntry(Entry entry) {
         entries.add(entry);
     };
-    // Métodos para almacenar y recuperar datos de entradas
-}
+
+    public void getEntries() {
+        this.entries.stream().forEach(entry -> {
+            System.out.println(entry);
+        });
+    };
+    };
