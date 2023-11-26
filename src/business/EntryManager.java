@@ -35,7 +35,7 @@ public class EntryManager {
         System.out.println("Entry added successfully!");
     }
     public void showEntries(){
-        EntryData.getEntries();
+        entryData.showEntries();
     };
     // Add more methods for entry-related logic as needed
 

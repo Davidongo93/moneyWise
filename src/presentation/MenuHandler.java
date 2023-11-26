@@ -79,7 +79,7 @@ public class MenuHandler {
 
             switch (choice) {
                 case 1:
-                    entryData
+                    entryManager.showEntries();
                     break;
                 case 2:
                     userManager.createEntry(entryManager);
