@@ -11,20 +11,21 @@ public class User {
 
     public User() {
     }
-
+//full constructor
     public User(String id, String name, String email, String password) {
         this.id = id;
         this.name = name;
         this.email = email;
         this.password = password;
     }
-    // override class for PUT
+    // create user constructor
 
     public User(String name, String email, String password) {
         this.name = name;
         this.email = email;
         this.password = password;
     }
+    // login constructor
     public User(String name, String password) {
         this.name = name;
         this.password = password;

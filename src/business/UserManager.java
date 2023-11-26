@@ -41,8 +41,8 @@ public class UserManager {
         User user = userData.getUser(name,password);
 
         if (user != null) {
-            userLoggedIn = true;  // Establece el estado como "logueado"
-            loggedInUser = user;  // Almacena al usuario logueado
+            userLoggedIn = true;
+            loggedInUser = user;
             System.out.println("Login successful!");
             System.out.println("welcome!"+ user);
             // You can add more functionality here, like displaying user's entries, etc.
@@ -58,8 +58,8 @@ public class UserManager {
     }
 
     public void logoutUser() {
-        userLoggedIn = false;   // Cambia el estado a "no logueado"
-        loggedInUser = null;    // Limpia la información del usuario logueado
+        userLoggedIn = false;
+        loggedInUser = null;
     }
     // Add more methods for user-related logic as needed
 };
