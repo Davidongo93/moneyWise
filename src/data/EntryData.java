@@ -12,5 +12,8 @@ public class EntryData {
         this.entries = new ArrayList<>();
     }
 
+    public void addEntry(Entry entry){
+        entries.add(entry);
+    };
     // Métodos para almacenar y recuperar datos de entradas
 }

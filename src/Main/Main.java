@@ -14,7 +14,10 @@ public class Main {
         business.UserManager userManager = new business.UserManager(userData,scanner);
         business.EntryManager entryManager = new business.EntryManager(entryData,scanner);
         // Inicializar el manejador de menú
-        presentation.MenuHandler menuHandler = new presentation.MenuHandler(scanner,userManager);
+        // ...
+        presentation.MenuHandler menuHandler = new presentation.MenuHandler(scanner, userManager, entryManager);
+// ...
+
 
         // Puedes pasar las instancias necesarias a las clases correspondientes
 

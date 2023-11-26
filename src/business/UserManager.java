@@ -50,6 +50,9 @@ public class UserManager {
             System.out.println("Invalid username or password. Please try again.");
         }
     }
+    public void createEntry(EntryManager entryManager) {
+        entryManager.addEntry();
+    }
     public boolean isUserLoggedIn() {
         return userLoggedIn;
     }

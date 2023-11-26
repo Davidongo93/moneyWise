@@ -1,16 +1,20 @@
 package presentation;
 
+import business.EntryManager;
 import business.UserManager;
 
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class MenuHandler {
     private Scanner scanner;
     private UserManager userManager;
+    private EntryManager entryManager;
 
-    public MenuHandler(Scanner scanner, UserManager userManager) {
+    public MenuHandler(Scanner scanner, UserManager userManager, EntryManager entryManager) {
         this.scanner = scanner;
         this.userManager = userManager;
+        this.entryManager = entryManager;
     }
 
     public void start() {
@@ -18,14 +22,29 @@ public class MenuHandler {
         System.out.println("Press enter to start...");
         scanner.nextLine(); // Wait for enter key press.
 
-        int choice;
+        int choice = 0;
+        boolean validInput;
         do {
-            System.out.println("1. Create user");
-            System.out.println("2. Log in with an existing user");
-            System.out.println("3. Exit");
-            System.out.print("Select an option: ");
-            choice = scanner.nextInt();
-            scanner.nextLine(); // Consume the newline character after the number
+            validInput = false;
+            do {
+
+                try {
+                    System.out.println("1. Create user");
+                    System.out.println("2. Log in with an existing user");
+                    System.out.println("3. Exit");
+                    System.out.print("Select an option: ");
+                    choice = scanner.nextInt();
+                    scanner.nextLine(); // Consume el carácter de nueva línea después del número
+
+                    validInput = true;  // Si no hay excepción, la entrada es válida
+                } catch (InputMismatchException exception) {
+                    System.out.println("Invalid input. Please enter a valid integer.");
+                    scanner.nextLine();  // Consume la entrada incorrecta para evitar un bucle infinito
+                } finally {
+                    // Este bloque se ejecuta siempre, independientemente de si se lanzó una excepción o no
+                    // Puedes poner aquí cualquier código que necesites ejecutar después del bloque try-catch
+                }
+            } while (!validInput);  // Repetir hasta que la entrada sea válida
 
             switch (choice) {
                 case 1:
@@ -63,7 +82,7 @@ public class MenuHandler {
                     //NIY userManager.showUserEntries();
                     break;
                 case 2:
-                   //NIY userManager.createEntry();
+                    userManager.createEntry(entryManager);
                     break;
                 case 3:
                     // Logic for generating reports
