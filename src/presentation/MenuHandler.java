@@ -66,23 +66,35 @@ public class MenuHandler {
     }
 
     private void showUserMenu() {
-        int choice;
+        int choice = 0;
+        boolean validInput;
         do {
-            System.out.println("\nUser Menu:");
-            System.out.println("1. View Entries");
-            System.out.println("2. Create Entry");
-            System.out.println("3. Generate Reports");
-            System.out.println("4. Logout");
-            System.out.print("Select an option: ");
-            choice = scanner.nextInt();
-            scanner.nextLine(); // Consume the newline character after the number
+            validInput = false;
+            do {
+                try {
+                    System.out.println("\nUser Menu:");
+                    System.out.println("1. View Entries");
+                    System.out.println("2. Create Entry");
+                    System.out.println("3. Generate Reports");
+                    System.out.println("4. Logout");
+                    System.out.print("Select an option: ");
+                    choice = scanner.nextInt();
+                    scanner.nextLine(); // Consume the newline character after the number
+                    validInput = true;
+                }  catch (InputMismatchException exception) {
+                    System.out.println("Invalid input. Please enter a valid integer.");
+                    scanner.nextLine();
+                } finally {
+
+                };
+            } while (!validInput);
 
             switch (choice) {
                 case 1:
                     entryManager.showEntries();
                     break;
                 case 2:
-                    userManager.createEntry(entryManager);
+                    entryManager.addEntry();
                     break;
                 case 3:
                     // Logic for generating reports

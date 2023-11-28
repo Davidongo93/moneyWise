@@ -19,10 +19,10 @@ public class UserData {
     public User getUser(String userName, String password) {
         for (User user : users) {
             if (user.getName().equals(userName) && user.getPassword().equals(password)) {
-                return user;  // Retorna el usuario si se encuentra una coincidencia
+                return user;
             }
         }
-        return null;  // Retorna null si no se encuentra ninguna coincidencia
+        return null;
     }
     @Override
     public String toString() {

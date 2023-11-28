@@ -18,19 +18,34 @@ public class UserManager {
         this.loggedInUser = null;
     }
 
-    public  void createUser() {
+    public void createUser() {
         System.out.print("Enter a username: ");
         String name = scanner.nextLine();
         System.out.print("Enter a valid email: ");
         String email = scanner.nextLine();
-        System.out.print("Enter a password: ");
-        String password = scanner.nextLine();
 
-        User newUser = new User(name, email, password);
-        userData.addUser(newUser);
+        boolean passwordValid = false;
+        do {
+            try {
+                System.out.print("Enter a password: ");
+                String password = scanner.nextLine();
+                System.out.print("Confirm password: ");
+                String confirmedPassword = scanner.nextLine();
 
-        System.out.println("User created successfully!"+ userData.toString());
+                PasswordValidator.validatePassword(password, confirmedPassword);
+
+                User newUser = new User(name, email, password);
+                userData.addUser(newUser);
+
+                System.out.println("User created successfully!");
+                passwordValid = true;  // La contraseña es válida, salimos del bucle
+            } catch (PasswordValidationException e) {
+                System.out.println("Error creating user: " + e.getMessage());
+                System.out.println("Please try again.");
+            }
+        } while (!passwordValid);
     }
+
 
     public void loginUser() {
         System.out.print("Enter your username: ");
@@ -41,8 +56,8 @@ public class UserManager {
         User user = userData.getUser(name,password);
 
         if (user != null) {
-            userLoggedIn = true;  // Establece el estado como "logueado"
-            loggedInUser = user;  // Almacena al usuario logueado
+            userLoggedIn = true;
+            loggedInUser = user;
             System.out.println("Login successful!");
             System.out.println("welcome!"+ user);
             // You can add more functionality here, like displaying user's entries, etc.
@@ -58,8 +73,8 @@ public class UserManager {
     }
 
     public void logoutUser() {
-        userLoggedIn = false;   // Cambia el estado a "no logueado"
-        loggedInUser = null;    // Limpia la información del usuario logueado
+        userLoggedIn = false;
+        loggedInUser = null;
     }
     // Add more methods for user-related logic as needed
 };

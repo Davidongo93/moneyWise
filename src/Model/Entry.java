@@ -7,7 +7,7 @@ public class Entry {
     private Date date;
     private String description;
     private double amount;
-    private EntryType type;  // Enum para representar si es un ingreso o un gasto
+    private EntryType type;  // Enum
     private String category;
 
     public Entry(Date date, String description, double amount, EntryType type, String category) {
@@ -73,5 +73,4 @@ public class Entry {
         this.category = category;
     }
 
-    // Otros métodos según sea necesario
 }
