@@ -18,19 +18,34 @@ public class UserManager {
         this.loggedInUser = null;
     }
 
-    public  void createUser() {
+    public void createUser() {
         System.out.print("Enter a username: ");
         String name = scanner.nextLine();
         System.out.print("Enter a valid email: ");
         String email = scanner.nextLine();
-        System.out.print("Enter a password: ");
-        String password = scanner.nextLine();
 
-        User newUser = new User(name, email, password);
-        userData.addUser(newUser);
+        boolean passwordValid = false;
+        do {
+            try {
+                System.out.print("Enter a password: ");
+                String password = scanner.nextLine();
+                System.out.print("Confirm password: ");
+                String confirmedPassword = scanner.nextLine();
 
-        System.out.println("User created successfully!"+ userData.toString());
+                PasswordValidator.validatePassword(password, confirmedPassword);
+
+                User newUser = new User(name, email, password);
+                userData.addUser(newUser);
+
+                System.out.println("User created successfully!");
+                passwordValid = true;  // La contraseña es válida, salimos del bucle
+            } catch (PasswordValidationException e) {
+                System.out.println("Error creating user: " + e.getMessage());
+                System.out.println("Please try again.");
+            }
+        } while (!passwordValid);
     }
+
 
     public void loginUser() {
         System.out.print("Enter your username: ");
