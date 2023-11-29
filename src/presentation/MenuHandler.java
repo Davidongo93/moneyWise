@@ -44,7 +44,7 @@ public class MenuHandler {
                 } finally {
 
                 };
-            } while (!validInput);  // Repetir hasta que la entrada sea válida
+            } while (!validInput);
 
             switch (choice) {
                 case 1:
@@ -79,14 +79,12 @@ public class MenuHandler {
                     System.out.println("4. Logout");
                     System.out.print("Select an option: ");
                     choice = scanner.nextInt();
-                    scanner.nextLine(); // Consume the newline character after the number
+                    scanner.nextLine();
                     validInput = true;
                 }  catch (InputMismatchException exception) {
                     System.out.println("Invalid input. Please enter a valid integer.");
                     scanner.nextLine();
-                } finally {
-
-                };
+                }
             } while (!validInput);
 
             switch (choice) {
@@ -97,7 +95,6 @@ public class MenuHandler {
                     entryManager.addEntry();
                     break;
                 case 3:
-                    // Logic for generating reports
                     System.out.println("Generating Reports...");
                     break;
                 case 4:
