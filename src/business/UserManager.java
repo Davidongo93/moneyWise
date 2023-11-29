@@ -9,7 +9,7 @@ public class UserManager {
     private UserData userData;
     private Scanner scanner;
     private boolean userLoggedIn;
-    private User loggedInUser;  // Almacena al usuario actualmente logueado
+    private User loggedInUser;
 
     public UserManager(UserData userData, Scanner scanner) {
         this.userData = userData;
@@ -38,7 +38,7 @@ public class UserManager {
                 userData.addUser(newUser);
 
                 System.out.println("User created successfully!");
-                passwordValid = true;  // La contraseña es válida, salimos del bucle
+                passwordValid = true;
             } catch (PasswordValidationException e) {
                 System.out.println("Error creating user: " + e.getMessage());
                 System.out.println("Please try again.");
@@ -60,7 +60,6 @@ public class UserManager {
             loggedInUser = user;
             System.out.println("Login successful!");
             System.out.println("welcome!"+ user);
-            // You can add more functionality here, like displaying user's entries, etc.
         } else {
             System.out.println("Invalid username or password. Please try again.");
         }
@@ -76,5 +75,4 @@ public class UserManager {
         userLoggedIn = false;
         loggedInUser = null;
     }
-    // Add more methods for user-related logic as needed
 };

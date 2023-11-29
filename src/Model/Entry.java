@@ -18,7 +18,7 @@ public class Entry {
         this.category = category;
     }
 
-    // Constructor adicional para simplificar la creación de instancias
+    // constructor
     public Entry(Date date, String description, double amount, EntryType type) {
         this(date, description, amount, type, null);
     }
