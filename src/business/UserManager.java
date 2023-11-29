@@ -33,11 +33,14 @@ public class UserManager {
                 String confirmedPassword = scanner.nextLine();
 
                 PasswordValidator.validatePassword(password, confirmedPassword);
-
-                User newUser = new User(name, email, password);
+ String id = (String.valueOf(1+UserData.userId()));
+                User newUser = new User(id, name, email, password);
+                //IMPLEMENTAR EL CONTADOR
                 userData.addUser(newUser);
 
                 System.out.println("User created successfully!");
+                //System.out.println(userData.toString());
+                UserData.getUsers();
                 passwordValid = true;
             } catch (PasswordValidationException e) {
                 System.out.println("Error creating user: " + e.getMessage());
@@ -59,7 +62,7 @@ public class UserManager {
             userLoggedIn = true;
             loggedInUser = user;
             System.out.println("Login successful!");
-            System.out.println("welcome!"+ user);
+            System.out.println("welcome!"+ user.getName());
         } else {
             System.out.println("Invalid username or password. Please try again.");
         }

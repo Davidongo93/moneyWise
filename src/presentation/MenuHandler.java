@@ -18,9 +18,7 @@ public class MenuHandler {
     }
 
     public void start() {
-        System.out.println("Welcome to Personal Expense Management System MoneyWise");
-        System.out.println("Press enter to start...");
-        scanner.nextLine(); // Wait for enter key press.
+        Views.welcome();
 
         int choice = 0;
         boolean validInput;

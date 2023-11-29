@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class UserData {
-    private List<User> users;
+    private static List<User> users;
 
     public UserData() {
         this.users = new ArrayList<>();
@@ -24,10 +24,22 @@ public class UserData {
         }
         return null;
     }
+
+    public static void getUsers() {
+        for (User user : users) {
+            System.out.println("UserId:" + user.getId());
+            System.out.println("Name:" + user.getName());
+            System.out.println("Email:" + user.getEmail());
+            }
+    }
+
+    public static int userId(){
+        return users.size();
+    }
+
     @Override
     public String toString() {
-        return "UserData{" +
-                "users=" + users +
+        return "users=" + users +
                 '}';
     }
 }
