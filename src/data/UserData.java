@@ -30,5 +30,4 @@ public class UserData {
                 "users=" + users +
                 '}';
     }
-// Métodos para almacenar y recuperar datos de usuarios
 }
