@@ -1,5 +1,6 @@
 package presentation;
 
+import Model.User;
 import business.EntryManager;
 import business.UserManager;
 
@@ -51,7 +52,7 @@ public class MenuHandler {
                 case 2:
                     userManager.loginUser();
                     if (userManager.isUserLoggedIn()) {
-                        showUserMenu();
+                        showUserMenu(userManager.getLoggedInUser());
                     }
                     break;
                 case 3:
@@ -63,7 +64,7 @@ public class MenuHandler {
         } while (choice != 3);
     }
 
-    private void showUserMenu() {
+    private void showUserMenu(User user) {
         int choice = 0;
         boolean validInput;
         do {
@@ -90,7 +91,7 @@ public class MenuHandler {
                     entryManager.showEntries();
                     break;
                 case 2:
-                    entryManager.addEntry();
+                    entryManager.addEntry(user);
                     break;
                 case 3:
                     System.out.println("Generating Reports...");

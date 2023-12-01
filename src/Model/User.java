@@ -11,21 +11,17 @@ public class User {
 
     public User() {
     }
-//full constructor
+    // create user constructor
     public User(String id, String name, String email, String password) {
         this.id = id;
         this.name = name;
         this.email = email;
         this.password = password;
     }
-    // create user constructor
+    // entries constructor?
 
-    public User(String name, String email, String password) {
-        this.name = name;
-        this.email = email;
-        this.password = password;
-    }
-//getters setters
+
+    //getters setters
     public String getId() {
         return id;
     }
@@ -62,7 +58,10 @@ public class User {
         return entries;
     }
 
-    public void setEntries(List<Entry> entries) {
-        this.entries = entries;
+    public void setEntries(Entry entry) {
+        if (getEntries() == null) {
+            entries = new ArrayList<>();
+        }
+        entries.add(entry);
     }
 }

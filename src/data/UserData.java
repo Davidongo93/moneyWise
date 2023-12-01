@@ -1,6 +1,7 @@
 package data;
 
 import Model.User;
+import Model.Entry;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -13,7 +14,7 @@ public class UserData {
     }
 
     public void addUser(User newUser) {
-    users.add(newUser);
+        users.add(newUser);
     }
 
     public User getUser(String userName, String password) {
@@ -30,16 +31,16 @@ public class UserData {
             System.out.println("UserId:" + user.getId());
             System.out.println("Name:" + user.getName());
             System.out.println("Email:" + user.getEmail());
-            }
+            sout
+        }
     }
 
-    public static int userId(){
+    ;
+
+    public static int userId() {
         return users.size();
     }
 
-    @Override
-    public String toString() {
-        return "users=" + users +
-                '}';
-    }
+    ;
 }
+
