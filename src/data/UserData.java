@@ -31,7 +31,7 @@ public class UserData {
             System.out.println("UserId:" + user.getId());
             System.out.println("Name:" + user.getName());
             System.out.println("Email:" + user.getEmail());
-            sout
+            System.out.println("---------------------------");
         }
     }
 

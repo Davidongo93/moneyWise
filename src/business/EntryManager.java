@@ -41,8 +41,8 @@ public class EntryManager {
         System.out.println("Entry added successfully!");
         System.out.println("Dear" + user.getName() + "Here is your entries" + user.getEntries());
     }
-    public void showEntries(){
-        user.getEntries();
+    public List<Entry> showEntries(User user){
+        return user.getEntries();
     };
 
 
