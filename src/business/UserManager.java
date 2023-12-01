@@ -11,6 +11,14 @@ public class UserManager {
     private boolean userLoggedIn;
     private User loggedInUser;
 
+    public  User getLoggedInUser() {
+        return loggedInUser;
+    }
+
+    public void setLoggedInUser(User loggedInUser) {
+        this.loggedInUser = loggedInUser;
+    }
+
     public UserManager(UserData userData, Scanner scanner) {
         this.userData = userData;
         this.scanner = scanner;
@@ -67,9 +75,6 @@ public class UserManager {
             System.out.println("Invalid username or password. Please try again.");
         }
     }
-    public void createEntry(EntryManager entryManager) {
-        entryManager.addEntry();
-    }
     public boolean isUserLoggedIn() {
         return userLoggedIn;
     }
@@ -78,4 +83,5 @@ public class UserManager {
         userLoggedIn = false;
         loggedInUser = null;
     }
+
 };

@@ -13,7 +13,7 @@ public class EntryData {
     };
 
     public void addEntry(Entry entry) {
-        entries.add(entry);
+
     };
 
     public List<Entry> getEntries() {
