@@ -6,10 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="e7df0a30-838f-4f2e-93b1-025e5c8ca2d1" name="Changes" comment="create entry succesfully">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Model/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/User.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/business/EntryManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/business/EntryManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/business/UserManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/business/UserManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/data/EntryData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/EntryData.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/data/UserData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/UserData.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/presentation/MenuHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/presentation/MenuHandler.java" afterDir="false" />
     </list>
@@ -299,7 +296,15 @@
       <option name="project" value="LOCAL" />
       <updated>1701277461048</updated>
     </task>
-    <option name="localTasksCounter" value="26" />
+    <task id="LOCAL-00026" summary="create entry succesfully">
+      <option name="closed" value="true" />
+      <created>1701404792929</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1701404792929</updated>
+    </task>
+    <option name="localTasksCounter" value="27" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">

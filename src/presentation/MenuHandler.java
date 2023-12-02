@@ -88,7 +88,7 @@ public class MenuHandler {
 
             switch (choice) {
                 case 1:
-                    entryManager.showEntries();
+                    entryManager.showEntries(user);
                     break;
                 case 2:
                     entryManager.addEntry(user);
