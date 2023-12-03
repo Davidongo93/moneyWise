@@ -15,25 +15,31 @@ public class DbInitializer {
         Statement statement = null;
 
         try {
-            connection = DbConnect.getConnection();
+            connection = DbConnect.openConnection();
             statement = connection.createStatement();
 
             // Verificar si las tablas ya existen
             if (tablesExist(connection, "users") && tablesExist(connection, "entries")) {
                 System.out.println("You can breath freely, MoneyWise are full steam workin'.");
             } else {
-                // Crear las tablas si no existen
                 String createUsersTable = "CREATE TABLE users (" +
                         "id INT AUTO_INCREMENT PRIMARY KEY," +
-                        "name VARCHAR(255) NOT NULL)";
+                        "name VARCHAR(255) NOT NULL)" +
+                        "email VARCHAR(255) NOT NULL)" +
+                        "pass VARCHAR(255) NOT NULL)";
                 statement.executeUpdate(createUsersTable);
 
                 String createEntriesTable = "CREATE TABLE entries (" +
                         "id INT AUTO_INCREMENT PRIMARY KEY," +
                         "user_id INT," +
-                        "content VARCHAR(1000) NOT NULL," +
+                        "date DATE NOT NULL," +
+                        "description VARCHAR(1000) NOT NULL," +
+                        "amount DECIMAL(10, 2) NOT NULL," +
+                        "type VARCHAR(255) NOT NULL," +
+                        "category VARCHAR(255) NOT NULL," +
                         "FOREIGN KEY (user_id) REFERENCES users(id))";
                 statement.executeUpdate(createEntriesTable);
+
 
                 System.out.println("Tables created successfully.");
             }
