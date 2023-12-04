@@ -18,15 +18,15 @@ public class DbInitializer {
             connection = DbConnect.openConnection();
             statement = connection.createStatement();
 
-            // Verificar si las tablas ya existen
             if (tablesExist(connection, "users") && tablesExist(connection, "entries")) {
                 System.out.println("You can breath freely, MoneyWise are full steam workin'.");
             } else {
                 String createUsersTable = "CREATE TABLE users (" +
                         "id INT AUTO_INCREMENT PRIMARY KEY," +
-                        "name VARCHAR(255) NOT NULL)" +
-                        "email VARCHAR(255) NOT NULL)" +
+                        "name VARCHAR(255) NOT NULL," +  // Coma añadida aquí
+                        "email VARCHAR(255) NOT NULL," +
                         "pass VARCHAR(255) NOT NULL)";
+
                 statement.executeUpdate(createUsersTable);
 
                 String createEntriesTable = "CREATE TABLE entries (" +
@@ -57,7 +57,6 @@ public class DbInitializer {
         }
     }
 
-    // Método para verificar si una tabla existe
     private static boolean tablesExist(Connection connection, String tableName) throws SQLException {
         DatabaseMetaData metadata = connection.getMetaData();
         try (var resultSet = metadata.getTables(null, null, tableName.toUpperCase(), null)) {

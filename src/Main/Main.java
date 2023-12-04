@@ -1,12 +1,16 @@
 package Main;
 
+import data.DbInitializer;
+
+import java.sql.SQLException;
 import java.util.Scanner;
 
 public class Main {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws SQLException {
         Scanner scanner = new Scanner(System.in);
 
        // data layer
+        DbInitializer.main(args);
         data.UserData userData = new data.UserData();
         data.EntryData entryData = new data.EntryData();
 

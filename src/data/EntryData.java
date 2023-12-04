@@ -10,7 +10,7 @@ public class EntryData {
 
     public EntryData() {
         this.entries = new ArrayList<>();
-    };
+    }
 
     public void addEntry(Entry entry) {
 

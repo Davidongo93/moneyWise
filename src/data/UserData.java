@@ -1,22 +1,24 @@
 package data;
 
 import Model.User;
-import Model.Entry;
-
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
 public class UserData {
-    private static List<User> users;
+    private List<User> users = new ArrayList<>();
+    private UserDAOImpl userDAO = new UserDAOImpl(DbConnect.openConnection());
 
-    public UserData() {
+    public UserData() throws SQLException {
         this.users = new ArrayList<>();
     }
 
     public void addUser(User newUser) {
-        users.add(newUser);
+        userDAO.insertUser(newUser);
     }
+}
 
+/*
     public User getUser(String userName, String password) {
         for (User user : users) {
             if (user.getName().equals(userName) && user.getPassword().equals(password)) {
@@ -41,6 +43,6 @@ public class UserData {
         return users.size();
     }
 
-    ;
-}
+    ;*/
+
 
