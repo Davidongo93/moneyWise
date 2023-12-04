@@ -50,10 +50,10 @@ public class MenuHandler {
                     userManager.createUser();
                     break;
                 case 2:
-                    userManager.loginUser();
+          /*          userManager.loginUser();
                     if (userManager.isUserLoggedIn()) {
                         showUserMenu(userManager.getLoggedInUser());
-                    }
+                    }*/
                     break;
                 case 3:
                     System.out.println("Exiting...");
@@ -97,9 +97,9 @@ public class MenuHandler {
                     System.out.println("Generating Reports...");
                     break;
                 case 4:
-                    userManager.logoutUser();
+     /*               userManager.logoutUser();
                     System.out.println("Logged out successfully.");
-                    break;
+                    break;*/
                 default:
                     System.out.println("Invalid option. Please try again.");
             }

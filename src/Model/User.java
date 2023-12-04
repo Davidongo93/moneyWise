@@ -12,7 +12,7 @@ public class User {
     public User() {
     }
     // create user constructor
-    public User(String id, String name, String email, String password) {
+    public User(String name, String email, String password) {
         this.id = id;
         this.name = name;
         this.email = email;

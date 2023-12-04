@@ -11,6 +11,7 @@ public class UserManager {
     private boolean userLoggedIn;
     private User loggedInUser;
 
+
     public  User getLoggedInUser() {
         return loggedInUser;
     }
@@ -41,14 +42,12 @@ public class UserManager {
                 String confirmedPassword = scanner.nextLine();
 
                 PasswordValidator.validatePassword(password, confirmedPassword);
- String id = (String.valueOf(1+UserData.userId()));
-                User newUser = new User(id, name, email, password);
-                //IMPLEMENTAR EL CONTADOR
+                User newUser = new User( name, email, password);
                 userData.addUser(newUser);
 
                 System.out.println("User created successfully!");
                 //System.out.println(userData.toString());
-                UserData.getUsers();
+                //UserData.getUsers();
                 passwordValid = true;
             } catch (PasswordValidationException e) {
                 System.out.println("Error creating user: " + e.getMessage());
@@ -58,7 +57,7 @@ public class UserManager {
     }
 
 
-    public void loginUser() {
+/*    public void loginUser() {
         System.out.print("Enter your username: ");
         String name = scanner.nextLine();
         System.out.print("Enter your password: ");
@@ -82,6 +81,6 @@ public class UserManager {
     public void logoutUser() {
         userLoggedIn = false;
         loggedInUser = null;
-    }
+    }*/
 
 };
