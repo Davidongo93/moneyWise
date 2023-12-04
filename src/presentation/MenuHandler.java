@@ -50,10 +50,10 @@ public class MenuHandler {
                     userManager.createUser();
                     break;
                 case 2:
-          /*          userManager.loginUser();
+                   userManager.loginUser();
                     if (userManager.isUserLoggedIn()) {
                         showUserMenu(userManager.getLoggedInUser());
-                    }*/
+                    }
                     break;
                 case 3:
                     System.out.println("Exiting...");
@@ -88,10 +88,10 @@ public class MenuHandler {
 
             switch (choice) {
                 case 1:
-                    entryManager.showEntries(user);
+                   // entryManager.showEntries(user);
                     break;
                 case 2:
-                    entryManager.addEntry(user);
+                   // entryManager.addEntry(user);
                     break;
                 case 3:
                     System.out.println("Generating Reports...");

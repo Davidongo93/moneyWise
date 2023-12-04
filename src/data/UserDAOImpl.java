@@ -3,6 +3,7 @@ import Model.Entry;
 import Model.User;
 
 import java.sql.Connection;
+import java.sql.Statement;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -10,9 +11,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 public  class UserDAOImpl implements UserDAO {
-    private Connection connection;
+    private final Connection connection;
+    private Statement statement;
 
-    // Constructor que recibe la conexión a la base de datos
     public UserDAOImpl(Connection connection) throws SQLException {
         this.connection = connection;
     }
@@ -25,17 +26,54 @@ public  class UserDAOImpl implements UserDAO {
             preparedStatement.setString(2, user.getEmail());
             preparedStatement.setString(3, user.getPassword());
             preparedStatement.executeUpdate();
+            System.out.println("User created successfully!");
 
             // Obtener el ID generado para el nuevo usuario
             try (ResultSet generatedKeys = preparedStatement.getGeneratedKeys()) {
                 if (generatedKeys.next()) {
                     user.setId(String.valueOf(generatedKeys.getInt(1)));
+                    System.out.println(user.toString());
                 } else {
                     throw new SQLException("No se pudo obtener el ID generado para el usuario.");
                 }
             }
         } catch (SQLException e) {
             e.printStackTrace(); // Manejo adecuado de excepciones en tu aplicación
+        }
+    }
+
+    @Override
+    public  User getUserByUsername(String username, String password) {
+        // Consulta parametrizada para verificar la existencia del usuario
+        String selectUserQuery = "SELECT * FROM users WHERE name = ? AND pass = ?";
+        try (PreparedStatement preparedStatement = connection.prepareStatement(selectUserQuery)) {
+            preparedStatement.setString(1, username);
+            preparedStatement.setString(2, password);
+
+            try (ResultSet resultSet = preparedStatement.executeQuery()) {
+                // Verificar si se encontró algún resultado
+                if (resultSet.next()) {
+                    // Se encontró un usuario con el nombre de usuario y contraseña proporcionados
+                    int userId = resultSet.getInt("id");
+                    String name = resultSet.getString("name");
+                    String userPassword = resultSet.getString("pass");
+
+                    // Crea un objeto User con los datos obtenidos
+                    User user = new User();
+                    user.setId(String.valueOf(userId));
+                    user.setName(name);
+                    user.setPassword(userPassword);
+
+                    // Puedes usar el objeto User según sea necesario
+                    return user;
+                } else {
+                    // No se encontró ningún usuario con el nombre de usuario y contraseña proporcionados
+                    return null;
+                }
+            }
+        } catch (SQLException e) {
+            e.printStackTrace(); // Manejo adecuado de excepciones en tu aplicación
+            return null;
         }
     }
 /*

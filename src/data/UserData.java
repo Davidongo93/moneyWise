@@ -6,29 +6,24 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class UserData {
-    private List<User> users = new ArrayList<>();
-    private UserDAOImpl userDAO = new UserDAOImpl(DbConnect.openConnection());
+    private final UserDAOImpl userDAO = new UserDAOImpl(DbConnect.openConnection());
 
     public UserData() throws SQLException {
-        this.users = new ArrayList<>();
+        List<User> users = new ArrayList<>();
     }
 
     public void addUser(User newUser) {
         userDAO.insertUser(newUser);
-    }
-}
 
-/*
+    }
+
+
     public User getUser(String userName, String password) {
-        for (User user : users) {
-            if (user.getName().equals(userName) && user.getPassword().equals(password)) {
-                return user;
-            }
-        }
-        return null;
+
+       return userDAO.getUserByUsername(userName, password);
     }
 
-    public static void getUsers() {
+/*    public static void getUsers() {
         for (User user : users) {
             System.out.println("UserId:" + user.getId());
             System.out.println("Name:" + user.getName());
@@ -37,12 +32,13 @@ public class UserData {
         }
     }
 
-    ;
-
-    public static int userId() {
-        return users.size();
-    }
-
     ;*/
+
+/*    public static int userId() {
+        return users.size();
+    }*/
+
+};
+
 
 

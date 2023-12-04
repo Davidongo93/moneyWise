@@ -11,17 +11,16 @@ public class User {
 
     public User() {
     }
+
     // create user constructor
     public User(String name, String email, String password) {
-        this.id = id;
         this.name = name;
         this.email = email;
         this.password = password;
     }
-    // entries constructor?
 
+    ;
 
-    //getters setters
     public String getId() {
         return id;
     }
@@ -54,7 +53,16 @@ public class User {
         this.password = password;
     }
 
-    public List<Entry> getEntries() {
+    @Override
+    public String toString() {
+        return "User{" +
+                "name='" + getName() + '\'' +
+                ", email='" + getEmail() + '\'' +
+                '}';
+    }
+}
+
+/*    public List<Entry> getEntries() {
         return entries;
     }
 
@@ -64,4 +72,4 @@ public class User {
         }
         entries.add(entry);
     }
-}
+}*/

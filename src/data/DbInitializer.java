@@ -23,7 +23,7 @@ public class DbInitializer {
             } else {
                 String createUsersTable = "CREATE TABLE users (" +
                         "id INT AUTO_INCREMENT PRIMARY KEY," +
-                        "name VARCHAR(255) NOT NULL," +  // Coma añadida aquí
+                        "name VARCHAR(255) NOT NULL," +
                         "email VARCHAR(255) NOT NULL," +
                         "pass VARCHAR(255) NOT NULL)";
 

@@ -22,7 +22,7 @@ public class EntryManager {
 
     }
 
-    public void addEntry(User user) {
+/*    public void addEntry(User user) {
         System.out.print("Enter the date (yyyy-MM-dd): ");
         String dateString = scanner.nextLine();
         Date date = parseDate(dateString);
@@ -43,7 +43,7 @@ public class EntryManager {
     }
     public List<Entry> showEntries(User user){
         return user.getEntries();
-    };
+    };*/
 
 
     private Date parseDate(String dateString) {
