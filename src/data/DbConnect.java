@@ -5,13 +5,20 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 
 public class DbConnect {
+    private static final String DB_DRIVER  = "org.h2.Driver";
     private static final String JDBC_URL = "jdbc:h2:~/test";
     private static final String USER = "sa";
     private static final String PASSWORD = "";
 
-    public static Connection openConnection() throws SQLException {
-        System.out.println("Getting conenection");
-        return DriverManager.getConnection(JDBC_URL, USER, PASSWORD);
+    public static Connection openConnection()  {
+        Connection connection = null;
+        try{
+            System.out.println("Getting conenection");
+            //Class.forName(DB_DRIVER);
+            return DriverManager.getConnection(JDBC_URL, USER, PASSWORD);
+        } catch (SQLException sqlException) {
+        }
+return null;//ya miramos que hacemos con el
     }
 
     public static void closeConnection(Connection connection) {

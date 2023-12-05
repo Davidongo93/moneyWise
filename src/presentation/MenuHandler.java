@@ -2,6 +2,8 @@ package presentation;
 
 import Model.User;
 import business.EntryManager;
+import business.PasswordValidationException;
+import business.PasswordValidator;
 import business.UserManager;
 
 import java.util.InputMismatchException;
@@ -47,7 +49,7 @@ public class MenuHandler {
 
             switch (choice) {
                 case 1:
-                    userManager.createUser();
+                    createUser();
                     break;
                 case 2:
                    userManager.loginUser();
@@ -62,6 +64,46 @@ public class MenuHandler {
                     System.out.println("Invalid option. Please try again.");
             }
         } while (choice != 3);
+    };
+
+    private void createUser() {
+        System.out.print("Enter a username: ");
+        String name = scanner.nextLine();
+        System.out.print("Enter a valid email: ");
+        String email = scanner.nextLine();
+
+        boolean passwordValid = false;
+        do {
+            try {
+                System.out.print("Enter a password: ");
+                String password = scanner.nextLine();
+                System.out.print("Confirm password: ");
+                String confirmedPassword = scanner.nextLine();
+
+                PasswordValidator.validatePassword(password, confirmedPassword);
+                User newUser = new User( name, email, password);
+                userManager.newUser(newUser);
+                passwordValid = true;
+/*  ----Intentar ocultar pass cuando se construya la app---
+                try {
+                    System.out.print("Enter your password: ");
+                    char[] passwordChars = System.console().readPassword();
+                    String password = new String(passwordChars);
+
+                    System.out.print("Confirm password: ");
+                    char[] passwordChars1 = System.console().readPassword();
+                    String confirmedPassword = new String(passwordChars1);
+
+                    PasswordValidator.validatePassword(password, confirmedPassword);
+                    User newUser = new User( name, email, password);
+                    userData.addUser(newUser);
+
+                    passwordValid = true;*/
+            } catch (PasswordValidationException e) {
+                System.out.println("Error creating user: " + e.getMessage());
+                System.out.println("Please try again.");
+            }
+        } while (!passwordValid);
     }
 
     private void showUserMenu(User user) {

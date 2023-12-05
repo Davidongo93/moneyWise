@@ -1,22 +1,20 @@
 package data;
-import Model.Entry;
+
 import Model.User;
 
-import java.sql.Connection;
 import java.sql.Statement;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.ArrayList;
-import java.util.List;
-
+import java.sql.Connection;
 public  class UserDAOImpl implements UserDAO {
-    private final Connection connection;
-    private Statement statement;
 
-    public UserDAOImpl(Connection connection) throws SQLException {
-        this.connection = connection;
-    }
+   private final  Connection connection;
+
+    public UserDAOImpl() {
+        this.connection = DbConnect.openConnection();
+    };
+
 
     @Override
     public void insertUser(User user) {
@@ -34,11 +32,12 @@ public  class UserDAOImpl implements UserDAO {
                     user.setId(String.valueOf(generatedKeys.getInt(1)));
                     System.out.println(user.toString());
                 } else {
-                    throw new SQLException("No se pudo obtener el ID generado para el usuario.");
+                    System.out.println("No se pudo obtener el ID generado para el usuario.");
                 }
             }
+            connection.close();
         } catch (SQLException e) {
-            e.printStackTrace(); // Manejo adecuado de excepciones en tu aplicación
+             throw  new RuntimeException(); // Manejo adecuado de excepciones en tu aplicación
         }
     }
 
@@ -64,7 +63,9 @@ public  class UserDAOImpl implements UserDAO {
                     user.setName(name);
                     user.setPassword(userPassword);
 
-                    // Puedes usar el objeto User según sea necesario
+                    preparedStatement.close();
+                    connection.close();
+
                     return user;
                 } else {
                     // No se encontró ningún usuario con el nombre de usuario y contraseña proporcionados

@@ -1,27 +1,24 @@
 package data;
 
 import Model.User;
+
+import java.sql.Connection;
 import java.sql.SQLException;
-import java.util.ArrayList;
-import java.util.List;
 
 public class UserData {
-    private final UserDAOImpl userDAO = new UserDAOImpl(DbConnect.openConnection());
-
-    public UserData() throws SQLException {
-        List<User> users = new ArrayList<>();
-    }
-
-    public void addUser(User newUser) {
-        userDAO.insertUser(newUser);
-
-    }
 
 
-    public User getUser(String userName, String password) {
 
-       return userDAO.getUserByUsername(userName, password);
-    }
+        public static void addUser (User newUser){
+            //data.UserDAOImpl.insertUser(newUser);
+
+        }
+
+
+        public User getUser (String userName, String password){
+             final UserDAOImpl userDAO = new UserDAOImpl();
+            return userDAO.getUserByUsername(userName, password);
+        }
 
 /*    public static void getUsers() {
         for (User user : users) {
@@ -38,7 +35,7 @@ public class UserData {
         return users.size();
     }*/
 
-};
+    };
 
 
 

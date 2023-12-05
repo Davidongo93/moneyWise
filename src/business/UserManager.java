@@ -1,8 +1,11 @@
 package business;
 
+import data.UserDAO;
+import data.UserDAOImpl;
 import data.UserData;
 import Model.User;
 
+import java.sql.SQLException;
 import java.util.Scanner;
 
 public class UserManager {
@@ -10,6 +13,12 @@ public class UserManager {
     private Scanner scanner;
     private boolean userLoggedIn;
     private User loggedInUser;
+    public UserManager(UserData userData, Scanner scanner) {
+        this.userData = userData;
+        this.scanner = scanner;
+        this.userLoggedIn = false;
+        this.loggedInUser = null;
+    }
 
 
     public  User getLoggedInUser() {
@@ -20,37 +29,13 @@ public class UserManager {
         this.loggedInUser = loggedInUser;
     }
 
-    public UserManager(UserData userData, Scanner scanner) {
-        this.userData = userData;
-        this.scanner = scanner;
-        this.userLoggedIn = false;
-        this.loggedInUser = null;
-    }
-
-    public void createUser() {
-        System.out.print("Enter a username: ");
-        String name = scanner.nextLine();
-        System.out.print("Enter a valid email: ");
-        String email = scanner.nextLine();
-
-        boolean passwordValid = false;
-        do {
-            try {
-                System.out.print("Enter a password: ");
-                String password = scanner.nextLine();
-                System.out.print("Confirm password: ");
-                String confirmedPassword = scanner.nextLine();
-
-                PasswordValidator.validatePassword(password, confirmedPassword);
-                User newUser = new User( name, email, password);
-                userData.addUser(newUser);
-
-                passwordValid = true;
-            } catch (PasswordValidationException e) {
-                System.out.println("Error creating user: " + e.getMessage());
-                System.out.println("Please try again.");
-            }
-        } while (!passwordValid);
+    public void newUser (User newUser){
+        UserDAO userDAO = new UserDAOImpl();
+        try {
+            userDAO.insertUser(newUser);
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
     }
 
 
