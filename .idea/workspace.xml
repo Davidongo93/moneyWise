@@ -4,17 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e7df0a30-838f-4f2e-93b1-025e5c8ca2d1" name="Changes" comment="tables defined statement">
-      <change afterPath="$PROJECT_DIR$/src/data/UserDAO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/data/UserDAOImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_11_23_2023_11_03_AM_[Changes]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_11_23_2023_11_03_AM__Changes_.xml" beforeDir="false" />
+    <list default="true" id="e7df0a30-838f-4f2e-93b1-025e5c8ca2d1" name="Changes" comment="Using connect without DTO&#10;)">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Model/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/User.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/business/UserManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/business/UserManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/data/DbInitializer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/DbInitializer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/data/EntryData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/EntryData.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/data/DbConnect.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/DbConnect.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/data/UserDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/UserDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/data/UserDAOImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/UserDAOImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/data/UserData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/UserData.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/presentation/MenuHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/presentation/MenuHandler.java" afterDir="false" />
     </list>
@@ -79,7 +75,7 @@
     &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;
   }
 }</component>
-  <component name="RunManager" selected="JAR Application.h2-2.2.224.jar">
+  <component name="RunManager" selected="Application.Main">
     <configuration name="DbInitializer" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="data.DbInitializer" />
       <module name="moneyWise" />
@@ -112,8 +108,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JAR Application.h2-2.2.224.jar" />
         <item itemvalue="Application.Main" />
+        <item itemvalue="JAR Application.h2-2.2.224.jar" />
         <item itemvalue="Application.DbInitializer" />
         <item itemvalue="Application.Main" />
         <item itemvalue="Application.DbInitializer" />
@@ -385,7 +381,23 @@
       <option name="project" value="LOCAL" />
       <updated>1701621599633</updated>
     </task>
-    <option name="localTasksCounter" value="33" />
+    <task id="LOCAL-00033" summary="Mi primera chamba(ft UsersDAO a.k.a my first sql h2 register)">
+      <option name="closed" value="true" />
+      <created>1701666485389</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1701666485389</updated>
+    </task>
+    <task id="LOCAL-00034" summary="Users Dao login(getUser by name &amp; id&#10;)">
+      <option name="closed" value="true" />
+      <created>1701722145707</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1701722145707</updated>
+    </task>
+    <option name="localTasksCounter" value="35" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -432,9 +444,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="First steps" />
-    <MESSAGE value="enum" />
-    <MESSAGE value="create user" />
     <MESSAGE value="create user context menu &amp; login" />
     <MESSAGE value="uh?" />
     <MESSAGE value="try catch not implemented yet" />
@@ -457,7 +466,10 @@
     <MESSAGE value=" create or initialize tables" />
     <MESSAGE value="gitignore" />
     <MESSAGE value="tables defined statement" />
-    <option name="LAST_COMMIT_MESSAGE" value="tables defined statement" />
+    <MESSAGE value="Mi primera chamba(ft UsersDAO a.k.a my first sql h2 register)" />
+    <MESSAGE value="Users Dao login(getUser by name &amp; id&#10;)" />
+    <MESSAGE value="Using connect without DTO&#10;)" />
+    <option name="LAST_COMMIT_MESSAGE" value="Using connect without DTO&#10;)" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
