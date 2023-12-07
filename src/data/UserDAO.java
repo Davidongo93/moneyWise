@@ -8,7 +8,7 @@ import Model.User;
 
 public interface UserDAO {
     void insertUser(User user)  throws SQLException;
-    User getUserByUsername(String username, String password)throws SQLException;;
+    User getUserByUsername(String username, String password)throws SQLException;
     /*
 
     void updateUser(User user);

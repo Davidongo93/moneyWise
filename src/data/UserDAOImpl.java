@@ -37,7 +37,7 @@ public  class UserDAOImpl implements UserDAO {
             }
             connection.close();
         } catch (SQLException e) {
-             throw  new RuntimeException(); // Manejo adecuado de excepciones en tu aplicación
+             throw  new RuntimeException();
         }
     }
 
