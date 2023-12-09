@@ -1,8 +1,6 @@
 package Main;
 
 import data.DbInitializer;
-
-import java.sql.SQLException;
 import java.util.Scanner;
 
 public class Main {

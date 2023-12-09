@@ -4,8 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e7df0a30-838f-4f2e-93b1-025e5c8ca2d1" name="Changes" comment="ready to spring boot">
+    <list default="true" id="e7df0a30-838f-4f2e-93b1-025e5c8ca2d1" name="Changes" comment="db initializer (Spring not ready yet)">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/business/UserManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/business/UserManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/data/UserData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/UserData.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -414,7 +417,15 @@
       <option name="project" value="LOCAL" />
       <updated>1701993393943</updated>
     </task>
-    <option name="localTasksCounter" value="38" />
+    <task id="LOCAL-00038" summary="db initializer (Spring not ready yet)">
+      <option name="closed" value="true" />
+      <created>1702079430738</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1702079430738</updated>
+    </task>
+    <option name="localTasksCounter" value="39" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -461,7 +472,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="uh?" />
     <MESSAGE value="try catch not implemented yet" />
     <MESSAGE value="User menu" />
     <MESSAGE value="mi primer try catch java" />
@@ -486,7 +496,8 @@
     <MESSAGE value="Users Dao login(getUser by name &amp; id&#10;)" />
     <MESSAGE value="Using connect without DTO&#10;)" />
     <MESSAGE value="ready to spring boot" />
-    <option name="LAST_COMMIT_MESSAGE" value="ready to spring boot" />
+    <MESSAGE value="db initializer (Spring not ready yet)" />
+    <option name="LAST_COMMIT_MESSAGE" value="db initializer (Spring not ready yet)" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -495,6 +506,11 @@
           <url>file://$PROJECT_DIR$/H2/src/Main.java</url>
           <line>13</line>
           <option name="timeStamp" value="2" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/business/UserManager.java</url>
+          <line>51</line>
+          <option name="timeStamp" value="5" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

@@ -49,9 +49,10 @@ public class UserManager {
 
         if (user != null) {
             userLoggedIn = true;
-            loggedInUser = user;
+          //  loggedInUser = user;
+            setLoggedInUser(user);
             System.out.println("Login successful!");
-            System.out.println("welcome!"+ user.getName());
+            System.out.println("welcome!"+ loggedInUser.getName());
         } else {
             System.out.println("Invalid username or password. Please try again.");
         }
