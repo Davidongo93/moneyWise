@@ -10,7 +10,7 @@ public class Main {
         Scanner scanner = new Scanner(System.in);
 
        // data layer
-
+        DbInitializer.main();
         data.UserData userData = new data.UserData();
         data.EntryData entryData = new data.EntryData();
 
