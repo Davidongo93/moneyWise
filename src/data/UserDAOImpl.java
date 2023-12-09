@@ -1,8 +1,6 @@
 package data;
 
 import Model.User;
-
-import java.sql.Statement;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -26,13 +24,13 @@ public  class UserDAOImpl implements UserDAO {
             preparedStatement.executeUpdate();
             System.out.println("User created successfully!");
 
-            // Obtener el ID generado para el nuevo usuario
+            // get ID
             try (ResultSet generatedKeys = preparedStatement.getGeneratedKeys()) {
                 if (generatedKeys.next()) {
                     user.setId(String.valueOf(generatedKeys.getInt(1)));
                     System.out.println(user.toString());
                 } else {
-                    System.out.println("No se pudo obtener el ID generado para el usuario.");
+                    System.out.println("Could'nt get user ID");
                 }
             }
             connection.close();
@@ -52,7 +50,6 @@ public  class UserDAOImpl implements UserDAO {
             try (ResultSet resultSet = preparedStatement.executeQuery()) {
                 // Verificar si se encontró algún resultado
                 if (resultSet.next()) {
-                    // Se encontró un usuario con el nombre de usuario y contraseña proporcionados
                     int userId = resultSet.getInt("id");
                     String name = resultSet.getString("name");
                     String userPassword = resultSet.getString("pass");
@@ -73,7 +70,7 @@ public  class UserDAOImpl implements UserDAO {
                 }
             }
         } catch (SQLException e) {
-            e.printStackTrace(); // Manejo adecuado de excepciones en tu aplicación
+            e.printStackTrace();
             return null;
         }
     }

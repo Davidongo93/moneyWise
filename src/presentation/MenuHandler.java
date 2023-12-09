@@ -84,21 +84,6 @@ public class MenuHandler {
                 User newUser = new User( name, email, password);
                 userManager.newUser(newUser);
                 passwordValid = true;
-/*  ----Intentar ocultar pass cuando se construya la app---
-                try {
-                    System.out.print("Enter your password: ");
-                    char[] passwordChars = System.console().readPassword();
-                    String password = new String(passwordChars);
-
-                    System.out.print("Confirm password: ");
-                    char[] passwordChars1 = System.console().readPassword();
-                    String confirmedPassword = new String(passwordChars1);
-
-                    PasswordValidator.validatePassword(password, confirmedPassword);
-                    User newUser = new User( name, email, password);
-                    userData.addUser(newUser);
-
-                    passwordValid = true;*/
             } catch (PasswordValidationException e) {
                 System.out.println("Error creating user: " + e.getMessage());
                 System.out.println("Please try again.");
@@ -139,9 +124,9 @@ public class MenuHandler {
                     System.out.println("Generating Reports...");
                     break;
                 case 4:
-     /*               userManager.logoutUser();
+                    userManager.logoutUser();
                     System.out.println("Logged out successfully.");
-                    break;*/
+                    break;
                 default:
                     System.out.println("Invalid option. Please try again.");
             }

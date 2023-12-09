@@ -9,8 +9,8 @@ import java.sql.SQLException;
 import java.util.Scanner;
 
 public class UserManager {
-    private UserData userData;
-    private Scanner scanner;
+   final  private UserData userData;
+   final private Scanner scanner;
     private boolean userLoggedIn;
     private User loggedInUser;
     public UserManager(UserData userData, Scanner scanner) {
@@ -66,4 +66,4 @@ public class UserManager {
         loggedInUser = null;
     }
 
-};
+}
