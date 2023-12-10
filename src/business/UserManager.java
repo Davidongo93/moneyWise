@@ -9,8 +9,8 @@ import java.sql.SQLException;
 import java.util.Scanner;
 
 public class UserManager {
-    private UserData userData;
-    private Scanner scanner;
+   final  private UserData userData;
+   final private Scanner scanner;
     private boolean userLoggedIn;
     private User loggedInUser;
     public UserManager(UserData userData, Scanner scanner) {
@@ -49,9 +49,10 @@ public class UserManager {
 
         if (user != null) {
             userLoggedIn = true;
-            loggedInUser = user;
+          //  loggedInUser = user;
+            setLoggedInUser(user);
             System.out.println("Login successful!");
-            System.out.println("welcome!"+ user.getName());
+            System.out.println("welcome!"+ loggedInUser.getName());
         } else {
             System.out.println("Invalid username or password. Please try again.");
         }
@@ -65,4 +66,4 @@ public class UserManager {
         loggedInUser = null;
     }
 
-};
+}
